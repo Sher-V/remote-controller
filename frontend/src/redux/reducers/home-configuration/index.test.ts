@@ -42,6 +42,7 @@ const data = {
   activeCard: null,
   isDragging: false,
   isLoading: false,
+  isSaved: false
 };
 
 const updatedData = {
@@ -85,6 +86,7 @@ const updatedData = {
   activeCard: null,
   isDragging: false,
   isLoading: false,
+  isSaved: false
 };
 
 const removeItemData = {
@@ -127,6 +129,7 @@ const removeItemData = {
   activeCard: null,
   isDragging: false,
   isLoading: false,
+  isSaved: false
 };
 
 const resetData = {
@@ -170,6 +173,7 @@ const resetData = {
   activeCard: null,
   isDragging: false,
   isLoading: false,
+  isSaved: true
 };
 
 const loadingData = { ...data, isLoading: true },
@@ -202,7 +206,7 @@ describe("testing reducer", () => {
     ).toEqual(removeItemData));
 
   it("should reset state", () =>
-    expect(reducer(updatedData, { type: ActionTypes.RESET_STATE })).toEqual(
+    expect(reducer(updatedData, { type: ActionTypes.SET_SAVED })).toEqual(
       resetData
     ));
 

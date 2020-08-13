@@ -1,12 +1,7 @@
-import React, { Fragment } from "react";
-import {
-  cleanup,
-  fireEvent,
-  render,
-  waitForDomChange,
-} from "@testing-library/react";
-import Dimmer from "./index";
+import React, {Fragment} from "react";
+import {cleanup, fireEvent, render, waitForDomChange,} from "@testing-library/react";
 import Control from "./index";
+import {ControlTypes} from "../../redux/reducers/home-configuration/types";
 
 Object.defineProperty(window, "matchMedia", {
   writable: true,
@@ -30,23 +25,27 @@ it("should render", async () => {
     Dimmer: 4,
     Power: 2,
   };
-  const updateValue = (name, checked) => (state[name] = checked);
+  // @ts-ignore
+  const updateValue = (name: any, checked: any) => (state[name] = checked);
   const { getByTestId, getByText, getByRole } = render(
     <Fragment>
       <Control
         value={state.Switch}
-        controlName={"Switch"}
+        controlName={ControlTypes.Switch}
         onChange={updateValue}
+        remove={(name: string) => {}}
       />
       <Control
         value={state.Dimmer}
-        controlName={"Dimmer"}
+        controlName={ControlTypes.Dimmer}
         onChange={updateValue}
+        remove={(name: string) => {}}
       />
       <Control
         value={state.Power}
-        controlName={"Power"}
+        controlName={ControlTypes.Power}
         onChange={updateValue}
+        remove={(name: string) => {}}
       />
     </Fragment>
   );
