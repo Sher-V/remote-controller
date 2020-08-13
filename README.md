@@ -21,5 +21,5 @@
 1. Для запуска проекта проинсталлировать пакеты в папках frontend и backend с помощью npm install
 2. Для старта сервера в папке backend - node server.js
 3. Для старта фронта в папке frontend - npm start
-4. В файле backed/.env заполнить поля login, password, dbname убрав угловые кавычки
+4. В файле backend/.env заполнить поля login, password, dbname убрав угловые кавычки
 
