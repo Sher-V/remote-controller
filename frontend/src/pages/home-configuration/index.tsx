@@ -72,7 +72,7 @@ const HomeConfiguration: React.FC<PropsType> = ({
 
   useEffect(() => {
     getHomeConfiguration(params.id);
-  }, []);
+  }, [getHomeConfiguration, params.id]);
 
   if (isSaved)
     Modal.success({

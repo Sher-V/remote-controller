@@ -22,7 +22,7 @@ type PropsType = MapStateToPropsType &
 const Homes: React.FC<PropsType> = ({ homes, getHomes }) => {
   useEffect(() => {
     getHomes();
-  }, []);
+  }, [getHomes]);
 
   return (
     <Fragment>
